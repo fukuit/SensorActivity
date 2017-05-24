@@ -1,0 +1,2 @@
+# SensorActivity
+android SensorManger sample.
