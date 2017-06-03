@@ -17,6 +17,10 @@ import android.widget.Toast;
 public class SensorListActivity extends ListActivity {
     private SensorManager sensorManager;
     private ArrayAdapter<String> adapter;
+
+    /**
+     * SensorManagerから取得できるSensorのリストを作成する
+     */
     private ArrayList<SensorItem> sensorList;
     private void initSensorList(){
         sensorList = new ArrayList<SensorItem>();
@@ -62,9 +66,11 @@ public class SensorListActivity extends ListActivity {
         listSensors();
     }
 
+    /**
+     * ListItemに表示されているsensorに関する情報をToastで表示する
+     */
     @Override
     protected void onListItemClick(ListView lv, View v, int position, long id) {
-        String sensorName = (String) lv.getAdapter().getItem(position);
         Sensor sensor = sensorManager.getDefaultSensor((sensorList.get(position)).getSensor());
         StringBuilder sb = new StringBuilder();
         if (sensor != null) {
