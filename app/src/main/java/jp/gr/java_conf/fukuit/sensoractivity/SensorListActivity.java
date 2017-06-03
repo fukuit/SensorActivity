@@ -71,7 +71,8 @@ public class SensorListActivity extends ListActivity {
      */
     @Override
     protected void onListItemClick(ListView lv, View v, int position, long id) {
-        Sensor sensor = sensorManager.getDefaultSensor((sensorList.get(position)).getSensor());
+        SensorItem si = sensorList.get(position);
+        Sensor sensor = sensorManager.getDefaultSensor(si.getSensor());
         StringBuilder sb = new StringBuilder();
         if (sensor != null) {
             sb.append(sensor.toString());
