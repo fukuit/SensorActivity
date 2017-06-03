@@ -40,11 +40,11 @@ public class SensorItem {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("SensorType:").append(this.sensor);
-        sb.append("/");
-        sb.append("SensorName:").append(this.sensorName);
-        sb.append("/");
-        sb.append("Status:").append(this.status);
+        sb.append("SensorType: ").append(this.sensor);
+        sb.append(" / ");
+        sb.append("SensorName: ").append(this.sensorName);
+        sb.append(" / ");
+        sb.append("Status: ").append(this.status);
         return sb.toString();
     }
 }

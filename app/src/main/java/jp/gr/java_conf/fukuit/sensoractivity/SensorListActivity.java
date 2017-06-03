@@ -79,21 +79,15 @@ public class SensorListActivity extends ListActivity {
      * SensorMangerからsensorListにあるsensorがあるかどうかを判断してlistViewのadapterにadd()する
      */
     private void listSensors(){
-        StringBuilder sb = new StringBuilder();
-        String sensorStatus = "";
         for(int i=0; i < sensorList.size(); i++) {
-            sb.setLength(0);
             SensorItem si = sensorList.get(i);
             Sensor sensor = sensorManager.getDefaultSensor(si.getSensor());
             if (sensor != null) {
                 si.setStatus(true);
-                sensorStatus = getString(R.string.status_ok);
             } else {
                 si.setStatus(false);
-                sensorStatus = getString(R.string.status_ng);
             }
-            sb.append(si.getSensorName()).append(": ").append(sensorStatus);
-            adapter.add(sb.toString());
+            adapter.add(si.toString());
             (sensorList.get(i)).setStatus(si.getStatus());
         }
     }
